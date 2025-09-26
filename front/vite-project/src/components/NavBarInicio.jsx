@@ -15,7 +15,7 @@ export const NavBarInicio = () => {
       <h1 className={styles.nombre_estetica}>
         Centro Estetico Dr. Jose Leonardo Ferrer
       </h1>
-      <nav>
+      <nav className={styles.contenedor}>
         <ul className={styles.lista}>
           <li>
             {!hideInicio && (
