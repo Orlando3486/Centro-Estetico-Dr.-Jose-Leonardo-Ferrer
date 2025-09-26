@@ -1,0 +1,7 @@
+.avatar {
+  width: 2rem;
+  transition: 0.8s;
+}
+.avatar:hover {
+  border: 0.1rem solid #0d47a1;
+}

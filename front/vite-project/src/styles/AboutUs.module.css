@@ -1,0 +1,32 @@
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.parrafo {
+  width: 70%;
+  padding: 2rem 2rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin: auto;
+  font-size: 1.07rem;
+  background-color: #ececec;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.142);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.parrafo:hover {
+  box-shadow: 0 2px 4px rgba(191, 165, 18, 0.737);
+}
+.hola {
+  margin-top: 3rem;
+  text-decoration: underline;
+  color: #bfa43a;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+.resaltar {
+  color: black;
+}

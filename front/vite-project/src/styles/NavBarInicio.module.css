@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #ececec;
+  box-shadow: 0 2px 4px rgba(95, 94, 94, 0.3);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nombre_estetica {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #bfa43a;
+  text-align: center;
+  text-decoration: underline;
+}
+.lista {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 3rem;
+}
+
+.link {
+  color: #333333;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #0d47a1;
+  border-radius: 0.5rem;
+  text-decoration: underline;
+}

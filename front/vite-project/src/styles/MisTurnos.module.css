@@ -1,0 +1,26 @@
+.link {
+  color: #bfa43a;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #0d47a1;
+  border-radius: 0.5rem;
+  text-decoration: underline;
+}
+
+.tituloH2 {
+  color: #bfa43a;
+  text-decoration: underline;
+  margin: 1rem;
+  font-size: 1.4rem;
+}
+
+.tituloH3 {
+  color: #bfa43a;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,13 @@
+.contenedorPrincipal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nombre_estetica {
+  color: #bfa43a;
+  text-decoration: underline;
+  font-size: 1.8rem;
+}

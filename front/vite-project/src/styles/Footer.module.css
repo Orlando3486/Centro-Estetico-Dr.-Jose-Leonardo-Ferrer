@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.1rem 4rem;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+  background-color: #ececec;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.142);
+  font-size: 0.9rem;
+}
+.centroEstetico {
+  color: #bfa43a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.imagen1 {
+  width: 2.5rem;
+}
+
+.imagen2 {
+  width: 1.76rem;
+}

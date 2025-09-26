@@ -1,0 +1,31 @@
+.turno {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ececec;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  margin-top: 2rem;
+  font-weight: 800;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  transition: 0.5s;
+}
+.turno:hover {
+  box-shadow: 0 1px 3px #bfa43a;
+}
+
+.boton {
+  padding: 0.5rem 1rem;
+  background-color: #1565c0;
+  color: aliceblue;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #0d47a1;
+}
