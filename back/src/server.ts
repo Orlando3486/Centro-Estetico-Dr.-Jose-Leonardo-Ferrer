@@ -2,10 +2,14 @@ import express, { Application } from "express";
 import router from "./routes/indexRouter";
 import morgan from "morgan";
 import cors from "cors";
-
-const server: Application = express();
 import sgMail from "@sendgrid/mail";
 import "dotenv/config";
+
+const server: Application = express();
+
+server.use(express.json());
+server.use(cors());
+server.use(morgan("dev"));
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
