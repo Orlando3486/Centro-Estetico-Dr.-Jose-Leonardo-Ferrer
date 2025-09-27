@@ -2,15 +2,6 @@
 import server from "./server";
 import "reflect-metadata";
 import { appDataSource } from "./config/data-source";
-import { Pool } from "pg";
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
-export default pool;
 
 appDataSource
   .initialize()
