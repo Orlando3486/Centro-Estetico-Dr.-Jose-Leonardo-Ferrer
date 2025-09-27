@@ -17,6 +17,7 @@ export const appDataSource = new DataSource({
   synchronize: !isProd,
   logging: !isProd,
   entities: [User, Credential, Appointment],
+  migrations: [__dirname + "/../migrations/*.{ts,js}"],
 });
 
 export const UserModel: Repository<User> = appDataSource.getRepository(User);

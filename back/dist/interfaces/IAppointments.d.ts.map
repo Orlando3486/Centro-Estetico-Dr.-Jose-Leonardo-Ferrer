@@ -1,0 +1,1 @@
+{"version":3,"file":"IAppointments.d.ts","sourceRoot":"","sources":["../../src/interfaces/IAppointments.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,YAAY;IAC3B,EAAE,EAAE,MAAM,CAAC;IACX,IAAI,EAAE,IAAI,CAAC;IACX,IAAI,EAAE,MAAM,CAAC;IACb,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,EAAE,MAAM,CAAC;CAChB;AAED,oBAAY,MAAM;IAChB,MAAM,WAAW;IACjB,SAAS,cAAc;CACxB"}
