@@ -4,9 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // import { PORT } from "./config/envs";
+require("dotenv/config");
 const server_1 = __importDefault(require("./server"));
 require("reflect-metadata");
 const data_source_1 = require("./config/data-source");
+// Esto carga variables de .env automáticamente
 data_source_1.appDataSource
     .initialize()
     .then(async () => {

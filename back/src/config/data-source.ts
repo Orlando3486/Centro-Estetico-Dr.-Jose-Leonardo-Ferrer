@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { DataSource, Repository } from "typeorm";
 import { Credential } from "../entities/Credentials.entity";
 import { User } from "../entities/User.entity";

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CredentialModel = exports.UserModel = exports.appDataSource = void 0;
+require("dotenv/config");
 const typeorm_1 = require("typeorm");
 const Credentials_entity_1 = require("../entities/Credentials.entity");
 const User_entity_1 = require("../entities/User.entity");

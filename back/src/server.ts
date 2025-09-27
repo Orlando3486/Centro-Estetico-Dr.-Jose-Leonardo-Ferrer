@@ -1,9 +1,9 @@
+import "dotenv/config";
 import express, { Application } from "express";
 import router from "./routes/indexRouter";
 import morgan from "morgan";
 import cors from "cors";
 import sgMail from "@sendgrid/mail";
-import "dotenv/config";
 
 const server: Application = express();
 
@@ -14,6 +14,7 @@ server.use(morgan("dev"));
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 server.get("/test-email", async (req, res) => {
+  console.log("✅ /test-email route hit");
   const msg = {
     to: "orlandozarraga31@hotmail.com", // tu correo de prueba
     from: process.env.EMAIL_USER as string,

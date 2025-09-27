@@ -1,7 +1,9 @@
 // import { PORT } from "./config/envs";
+import "dotenv/config";
 import server from "./server";
 import "reflect-metadata";
 import { appDataSource } from "./config/data-source";
+// Esto carga variables de .env automáticamente
 
 appDataSource
   .initialize()

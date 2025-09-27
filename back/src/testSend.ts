@@ -1,25 +1,21 @@
-import "dotenv/config";
 import sgMail from "@sendgrid/mail";
+import "dotenv/config";
 
-// Configuramos la API Key desde las variables de entorno
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 const msg = {
-  to: "tucorreo@dominio.com", // tu correo de prueba
-  from: process.env.EMAIL_USER as string, // remitente verificado en SendGrid
-  subject: "Prueba de correo desde Render",
-  text: "Este es un correo de prueba enviado desde Render usando SendGrid",
-  html: "<p>Este es un <strong>correo de prueba</strong> enviado desde Render usando SendGrid</p>",
+  to: "tucorreo@dominio.com", // 📩 el correo donde quieres recibir
+  from: process.env.EMAIL_USER as string, // ⚠️ debe estar verificado en SendGrid
+  subject: "Prueba directa desde Node + SendGrid",
+  text: "Este es un correo de prueba usando SendGrid",
+  html: "<strong>Funciona! 🎉</strong>",
 };
 
-// Enviamos el correo
 sgMail
   .send(msg)
-  .then((res) => {
+  .then(() => {
     console.log("✅ Email enviado correctamente");
-    console.log("Respuesta completa de SendGrid:", res);
   })
-  .catch((err) => {
-    console.error("❌ Error enviando correo:");
-    console.error(err.response?.body || err);
+  .catch((error) => {
+    console.error("❌ Error enviando email:", error.response?.body || error);
   });
