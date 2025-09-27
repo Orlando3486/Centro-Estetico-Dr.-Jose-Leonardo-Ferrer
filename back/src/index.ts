@@ -1,4 +1,4 @@
-import { PORT } from "./config/envs";
+// import { PORT } from "./config/envs";
 import server from "./server";
 import "reflect-metadata";
 import { appDataSource } from "./config/data-source";
@@ -7,8 +7,8 @@ appDataSource
   .initialize()
   .then(() => {
     console.log("Conexion a la DB exitosa");
-
-    server.listen(PORT, "0.0.0.0", () => {
+    const PORT = process.env.PORT || 3000;
+    server.listen(PORT, () => {
       console.log(`server listening on port: ${PORT}`);
     });
   })
