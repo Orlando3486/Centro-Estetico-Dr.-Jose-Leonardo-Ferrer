@@ -5,6 +5,7 @@ import styles from "../../styles/RegisterForm.module.css";
 import Swal from "sweetalert2";
 import { formValidate } from "../../helpers/formValidate";
 import { useNavigate, Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const RegisterForm = () => {
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setForm(values);
     axios
-      .post("http://localhost:3000/users/register", values, {
+      .post(`${API_URL}/users/register`, values, {
         headers: {
           token: "proyectoM3",
         },

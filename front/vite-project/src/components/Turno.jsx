@@ -2,12 +2,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import styles from "../styles/Turno.module.css";
 import statusStyle from "../helpers/statusStyle";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Turno = ({ id, date, time, status, onUpdate }) => {
   const cancelarTurno = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/appointments/cancel/${id}`,
+        `${API_URL}/appointments/cancel/${id}`,
         { status: "cancelled" },
         {
           headers: {

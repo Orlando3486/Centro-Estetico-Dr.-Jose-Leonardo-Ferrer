@@ -3,6 +3,8 @@ import Turno from "../../components/Turno";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "../../styles/MisTurnos.module.css";
+const API_URL = import.meta.env.VITE_API_URL;
+
 const MisTurnos = () => {
   const [citas, setCitas] = useState([]);
   const userId = localStorage.getItem("userId");
@@ -13,7 +15,7 @@ const MisTurnos = () => {
       return;
     }
     axios
-      .get(`http://localhost:3000/appointments/user/${userId}`, {
+      .get(`${API_URL}/appointments/user/${userId}`, {
         headers: { token: "proyectoM3" },
       })
       .then((response) => {

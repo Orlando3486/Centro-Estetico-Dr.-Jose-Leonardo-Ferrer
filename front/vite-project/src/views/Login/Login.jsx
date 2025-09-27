@@ -5,6 +5,7 @@ import styles from "../../styles/Login.module.css";
 import { loginValidate } from "../../helpers/loginValidate";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,13 +13,9 @@ const Login = () => {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/users/login",
-        values,
-        {
-          headers: { token: "proyectoM3" },
-        }
-      );
+      const response = await axios.post(`${API_URL}/users/login`, values, {
+        headers: { token: "proyectoM3" },
+      });
 
       if (response.status === 200) {
         const user = response.data.user || null;
