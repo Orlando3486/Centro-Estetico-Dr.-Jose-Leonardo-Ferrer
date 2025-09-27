@@ -44,9 +44,6 @@ server.get("/test-email", async (req, res) => {
         res.status(500).send("Error enviando correo, revisa logs");
     }
 });
-server.use(express_1.default.json());
-server.use((0, cors_1.default)());
-server.use((0, morgan_1.default)("dev"));
 server.use("/", indexRouter_1.default);
 exports.default = server;
 //# sourceMappingURL=server.js.map
