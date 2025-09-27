@@ -15,7 +15,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 server.get("/test-email", async (req, res) => {
   const msg = {
-    to: "tucorreo@dominio.com", // tu correo de prueba
+    to: "orlandozarraga31@hotmail.com", // tu correo de prueba
     from: process.env.EMAIL_USER as string,
     subject: "Prueba de correo desde Render",
     text: "Correo de prueba desde Render usando SendGrid",
