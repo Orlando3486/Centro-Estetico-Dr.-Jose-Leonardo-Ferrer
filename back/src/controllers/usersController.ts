@@ -48,9 +48,8 @@ export const registerUserController = async (
   try {
     const newUser = await registerUserService(req.body);
 
-    // Enviar email de bienvenida
     if (newUser.email) {
-      sendEmail(
+      await sendEmail(
         newUser.email,
         "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer",
         `Hola ${newUser.name}, gracias por registrarte en nuestro sistema.`

@@ -69,7 +69,7 @@ export const scheduleAppointmentController = async (
     const user = await userRepository.findOne({ where: { id: userId } });
 
     if (user?.email) {
-      sendEmail(
+      await sendEmail(
         user.email,
         "Turno agendado",
         `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`
@@ -110,7 +110,7 @@ export const cancelAppointmentController = async (
     });
 
     if (appointmentWithUser?.user?.email) {
-      sendEmail(
+      await sendEmail(
         appointmentWithUser.user.email,
         "Turno cancelado",
         `Hola ${appointmentWithUser.user.name}, tu turno programado para el día ${appointmentWithUser.date} a las ${appointmentWithUser.time} ha sido cancelado.`

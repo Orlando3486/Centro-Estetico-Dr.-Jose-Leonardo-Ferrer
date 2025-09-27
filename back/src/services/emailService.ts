@@ -1,14 +1,36 @@
-import transporter from "../utils/email";
+import sgMail, { MailDataRequired } from "@sendgrid/mail";
 
-export const sendEmail = async (to: string, subject: string, text: string) => {
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+
+export const sendEmail = async (
+  to: string,
+  subject: string,
+  text: string,
+  html?: string
+) => {
+  // Construimos el objeto dinámicamente
+  const msg: MailDataRequired = {
+    to,
+    from: "orlandozarraga31@hotmail.com",
+    subject,
+    text,
+    ...(html ? { html } : {}), // solo agregamos html si viene definido
+  };
+
   try {
-    await transporter.sendMail({
-      from: `"Centro Estético Dr. Jose Leonardo Ferrer" <${process.env.EMAIL_USER}>`,
-      to,
-      subject,
-      text,
-    });
+    const response = await sgMail.send(msg);
+    console.log(
+      "✅ Email enviado:",
+      response[0].statusCode,
+      response[0].headers
+    );
+    return response;
   } catch (error) {
-    console.error("Error enviando email:", error);
+    if (error instanceof Error) {
+      console.error("❌ Error enviando email:", error.message);
+    } else {
+      console.error("❌ Error enviando email:", error);
+    }
+    throw new Error("Error enviando email");
   }
 };

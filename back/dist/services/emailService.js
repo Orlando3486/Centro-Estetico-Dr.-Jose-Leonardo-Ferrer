@@ -4,18 +4,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendEmail = void 0;
-const email_1 = __importDefault(require("../utils/email"));
-const sendEmail = async (to, subject, text) => {
+const mail_1 = __importDefault(require("@sendgrid/mail"));
+mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
+const sendEmail = async (to, subject, text, html) => {
+    // Construimos el objeto dinámicamente
+    const msg = {
+        to,
+        from: "orlandozarraga31@hotmail.com",
+        subject,
+        text,
+        ...(html ? { html } : {}), // solo agregamos html si viene definido
+    };
     try {
-        await email_1.default.sendMail({
-            from: `"Centro Estético Dr. Jose Leonardo Ferrer" <${process.env.EMAIL_USER}>`,
-            to,
-            subject,
-            text,
-        });
+        const response = await mail_1.default.send(msg);
+        console.log("✅ Email enviado:", response[0].statusCode, response[0].headers);
+        return response;
     }
     catch (error) {
-        console.error("Error enviando email:", error);
+        if (error instanceof Error) {
+            console.error("❌ Error enviando email:", error.message);
+        }
+        else {
+            console.error("❌ Error enviando email:", error);
+        }
+        throw new Error("Error enviando email");
     }
 };
 exports.sendEmail = sendEmail;

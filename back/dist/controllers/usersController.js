@@ -34,9 +34,8 @@ exports.getUserByIdController = getUserByIdController;
 const registerUserController = async (req, res) => {
     try {
         const newUser = await (0, usersService_1.registerUserService)(req.body);
-        // Enviar email de bienvenida
         if (newUser.email) {
-            (0, emailService_1.sendEmail)(newUser.email, "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer", `Hola ${newUser.name}, gracias por registrarte en nuestro sistema.`).catch((err) => console.error("Error enviando email:", err));
+            await (0, emailService_1.sendEmail)(newUser.email, "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer", `Hola ${newUser.name}, gracias por registrarte en nuestro sistema.`).catch((err) => console.error("Error enviando email:", err));
         }
         res.status(201).json({
             msg: "Registro de un nuevo usuario con éxito",

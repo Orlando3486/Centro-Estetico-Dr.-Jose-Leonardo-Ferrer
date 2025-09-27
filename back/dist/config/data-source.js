@@ -17,6 +17,7 @@ exports.appDataSource = new typeorm_1.DataSource({
     synchronize: !isProd,
     logging: !isProd,
     entities: [User_entity_1.User, Credentials_entity_1.Credential, Appointment_entity_1.Appointment],
+    migrations: [__dirname + "/../migrations/*.{ts,js}"],
 });
 exports.UserModel = exports.appDataSource.getRepository(User_entity_1.User);
 exports.CredentialModel = exports.appDataSource.getRepository(Credentials_entity_1.Credential);
