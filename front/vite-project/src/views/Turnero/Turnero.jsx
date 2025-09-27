@@ -4,13 +4,14 @@ import Swal from "sweetalert2";
 import styles from "../../styles/Login.module.css";
 import { turnoValidate } from "../../helpers/turnoValidate";
 import { useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Turnero = () => {
   const navigate = useNavigate();
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/appointments/schedule",
+        `${API_URL}/appointments/schedule`,
         values,
         {
           headers: { token: "proyectoM3" },
