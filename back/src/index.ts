@@ -5,11 +5,16 @@ import { appDataSource } from "./config/data-source";
 
 appDataSource
   .initialize()
-  .then(() => {
-    console.log("Conexion a la DB exitosa");
+  .then(async () => {
+    console.log("DB connected");
+
+    // Ejecutar migraciones automáticamente
+    await appDataSource.runMigrations();
+    console.log("Migrations applied");
+
     const PORT = process.env.PORT || 3000;
     server.listen(PORT, () => {
-      console.log(`server listening on port: ${PORT}`);
+      console.log(`Server listening on port: ${PORT}`);
     });
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.error("DB connection error:", err));
