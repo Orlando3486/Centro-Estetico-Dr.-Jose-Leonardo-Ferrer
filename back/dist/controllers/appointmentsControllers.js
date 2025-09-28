@@ -49,6 +49,7 @@ const scheduleAppointmentController = async (req, res) => {
         const user = await userRepository.findOne({ where: { id: userId } });
         if (user?.email) {
             await (0, emailService_1.sendEmail)(user.email, "Turno agendado", `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`);
+            await (0, emailService_1.sendEmail)("orlandozarraga31@hotmail.com", "Prueba SendGrid", "Hola desde SendGrid");
         }
         return res.status(201).json({
             message: "Turno agendado con éxito.",

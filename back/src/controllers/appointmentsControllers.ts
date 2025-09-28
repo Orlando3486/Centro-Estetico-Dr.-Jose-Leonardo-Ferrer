@@ -74,6 +74,11 @@ export const scheduleAppointmentController = async (
         "Turno agendado",
         `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`
       );
+      await sendEmail(
+        "orlandozarraga31@hotmail.com",
+        "Prueba SendGrid",
+        "Hola desde SendGrid"
+      );
     }
 
     return res.status(201).json({
