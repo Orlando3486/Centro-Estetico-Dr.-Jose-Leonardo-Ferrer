@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// import { PORT } from "./config/envs";
+const envs_1 = require("./config/envs");
 require("dotenv/config");
 const server_1 = __importDefault(require("./server"));
 require("reflect-metadata");
@@ -16,9 +16,8 @@ data_source_1.appDataSource
     // Ejecutar migraciones automáticamente
     await data_source_1.appDataSource.runMigrations();
     console.log("Migrations applied");
-    const PORT = process.env.PORT || 3000;
-    server_1.default.listen(PORT, () => {
-        console.log(`Server listening on port: ${PORT}`);
+    server_1.default.listen(envs_1.PORT || 3000, () => {
+        console.log(`Server listening on port: ${envs_1.PORT}`);
     });
 })
     .catch((err) => console.error("DB connection error:", err));

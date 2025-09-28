@@ -48,7 +48,7 @@ const scheduleAppointmentController = async (req, res) => {
         const userRepository = data_source_1.appDataSource.getRepository(User_entity_1.User);
         const user = await userRepository.findOne({ where: { id: userId } });
         if (user?.email) {
-            await (0, emailService_1.sendEmail)(user.email, "Turno agendado", `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`).catch((err) => console.error("Error enviando email:", err));
+            await (0, emailService_1.sendEmail)(user.email, "Turno agendado", `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`);
         }
         return res.status(201).json({
             message: "Turno agendado con éxito.",
@@ -76,7 +76,7 @@ const cancelAppointmentController = async (req, res) => {
             relations: ["user"],
         });
         if (appointmentWithUser?.user?.email) {
-            await (0, emailService_1.sendEmail)(appointmentWithUser.user.email, "Turno cancelado", `Hola ${appointmentWithUser.user.name}, tu turno programado para el día ${appointmentWithUser.date} a las ${appointmentWithUser.time} ha sido cancelado.`).catch((err) => console.error("Error enviando email:", err));
+            await (0, emailService_1.sendEmail)(appointmentWithUser.user.email, "Turno cancelado", `Hola ${appointmentWithUser.user.name}, tu turno programado para el día ${appointmentWithUser.date} a las ${appointmentWithUser.time} ha sido cancelado.`);
         }
         res.status(200).json({
             message: "Turno cancelado con éxito",

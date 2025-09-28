@@ -1,4 +1,4 @@
-import "dotenv/config";
+import { EMAIL_USER } from "./config/envs";
 import express, { Application } from "express";
 import router from "./routes/indexRouter";
 import morgan from "morgan";
@@ -17,7 +17,7 @@ server.get("/test-email", async (req, res) => {
   console.log("✅ /test-email route hit");
   const msg = {
     to: "orlandozarraga31@hotmail.com", // tu correo de prueba
-    from: process.env.EMAIL_USER as string,
+    from: EMAIL_USER as string,
     subject: "Prueba de correo desde Render",
     text: "Correo de prueba desde Render usando SendGrid",
     html: "<p>Correo de prueba <strong>desde Render</strong></p>",

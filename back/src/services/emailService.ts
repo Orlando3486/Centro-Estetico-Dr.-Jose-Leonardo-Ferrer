@@ -1,6 +1,7 @@
 import sgMail, { MailDataRequired } from "@sendgrid/mail";
+import { EMAIL_USER, SENDGRID_API_KEY } from "../config/envs";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+sgMail.setApiKey(SENDGRID_API_KEY as string);
 
 export const sendEmail = async (
   to: string,
@@ -11,7 +12,7 @@ export const sendEmail = async (
   // Construimos el objeto dinámicamente
   const msg: MailDataRequired = {
     to,
-    from: "orlandozarraga31@hotmail.com",
+    from: EMAIL_USER as string,
     subject,
     text,
     ...(html ? { html } : {}), // solo agregamos html si viene definido

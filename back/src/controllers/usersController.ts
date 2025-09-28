@@ -52,17 +52,18 @@ export const registerUserController = async (
       await sendEmail(
         newUser.email,
         "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer",
-        `Hola ${newUser.name}, gracias por registrarte en nuestro sistema.`
-      ).catch((err) => console.error("Error enviando email:", err));
+        "Hola " + newUser.name + ", gracias por registrarte.",
+        `<p>Hola <strong>${newUser.name}</strong>, gracias por registrarte en nuestro sistema.</p>
+   <p>Centro Estético Dr. José Leonardo Ferrer 💆‍♀️✨</p>`
+      );
     }
-
     res.status(201).json({
       msg: "Registro de un nuevo usuario con éxito",
       data: newUser,
     });
   } catch (error) {
     const err = error as PostgresError;
-
+    console.error("Error enviando email:", err);
     console.log("Detalle del error de Postgres:", err.detail);
 
     res.status(400).json({

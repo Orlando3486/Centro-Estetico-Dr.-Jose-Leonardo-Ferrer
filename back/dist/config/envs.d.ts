@@ -10,4 +10,5 @@ export declare const DB_DROP: boolean;
 export declare const DB_LOGGING: boolean;
 export declare const EMAIL_USER: string | undefined;
 export declare const EMAIL_PASS: string | undefined;
+export declare const SENDGRID_API_KEY: string | undefined;
 //# sourceMappingURL=envs.d.ts.map

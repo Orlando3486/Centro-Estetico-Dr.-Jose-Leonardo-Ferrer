@@ -35,7 +35,8 @@ const registerUserController = async (req, res) => {
     try {
         const newUser = await (0, usersService_1.registerUserService)(req.body);
         if (newUser.email) {
-            await (0, emailService_1.sendEmail)(newUser.email, "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer", `Hola ${newUser.name}, gracias por registrarte en nuestro sistema.`).catch((err) => console.error("Error enviando email:", err));
+            await (0, emailService_1.sendEmail)(newUser.email, "Bienvenido al Centro Estético Dr. Jose Leonardo Ferrer", "Hola " + newUser.name + ", gracias por registrarte.", `<p>Hola <strong>${newUser.name}</strong>, gracias por registrarte en nuestro sistema.</p>
+   <p>Centro Estético Dr. José Leonardo Ferrer 💆‍♀️✨</p>`);
         }
         res.status(201).json({
             msg: "Registro de un nuevo usuario con éxito",
@@ -44,6 +45,7 @@ const registerUserController = async (req, res) => {
     }
     catch (error) {
         const err = error;
+        console.error("Error enviando email:", err);
         console.log("Detalle del error de Postgres:", err.detail);
         res.status(400).json({
             msg: err instanceof Error

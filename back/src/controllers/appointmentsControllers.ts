@@ -73,7 +73,7 @@ export const scheduleAppointmentController = async (
         user.email,
         "Turno agendado",
         `Hola ${user.name}, tu turno fue agendado para el día ${date} a las ${time}.`
-      ).catch((err) => console.error("Error enviando email:", err));
+      );
     }
 
     return res.status(201).json({
@@ -114,7 +114,7 @@ export const cancelAppointmentController = async (
         appointmentWithUser.user.email,
         "Turno cancelado",
         `Hola ${appointmentWithUser.user.name}, tu turno programado para el día ${appointmentWithUser.date} a las ${appointmentWithUser.time} ha sido cancelado.`
-      ).catch((err) => console.error("Error enviando email:", err));
+      );
     }
 
     res.status(200).json({

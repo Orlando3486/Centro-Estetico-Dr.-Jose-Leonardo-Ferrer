@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EMAIL_PASS = exports.EMAIL_USER = exports.DB_LOGGING = exports.DB_DROP = exports.DB_SYNCHRONIZE = exports.DB_DATABASE = exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_PORT = exports.DB_HOST = exports.PORT = void 0;
+exports.SENDGRID_API_KEY = exports.EMAIL_PASS = exports.EMAIL_USER = exports.DB_LOGGING = exports.DB_DROP = exports.DB_SYNCHRONIZE = exports.DB_DATABASE = exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_PORT = exports.DB_HOST = exports.PORT = void 0;
 require("dotenv/config");
 exports.PORT = process.env.PORT
     ? parseInt(process.env.PORT, 10)
@@ -25,4 +25,5 @@ exports.DB_LOGGING = process.env.DB_LOGGING
     : true;
 exports.EMAIL_USER = process.env.EMAIL_USER;
 exports.EMAIL_PASS = process.env.EMAIL_PASS;
+exports.SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 //# sourceMappingURL=envs.js.map

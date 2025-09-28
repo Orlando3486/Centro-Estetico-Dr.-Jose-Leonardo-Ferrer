@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const envs_1 = require("./config/envs");
 const mail_1 = __importDefault(require("@sendgrid/mail"));
-require("dotenv/config");
-mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
+mail_1.default.setApiKey(envs_1.SENDGRID_API_KEY);
 const msg = {
-    to: "tucorreo@dominio.com", // 📩 el correo donde quieres recibir
-    from: process.env.EMAIL_USER, // ⚠️ debe estar verificado en SendGrid
+    to: "orlandozarraga31@hotmail.com", // 📩 el correo donde quieres recibir
+    from: envs_1.EMAIL_USER, // ⚠️ debe estar verificado en SendGrid
     subject: "Prueba directa desde Node + SendGrid",
     text: "Este es un correo de prueba usando SendGrid",
     html: "<strong>Funciona! 🎉</strong>",

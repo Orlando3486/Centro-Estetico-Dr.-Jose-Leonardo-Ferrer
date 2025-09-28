@@ -1,4 +1,4 @@
-// import { PORT } from "./config/envs";
+import { PORT } from "./config/envs";
 import "dotenv/config";
 import server from "./server";
 import "reflect-metadata";
@@ -14,8 +14,7 @@ appDataSource
     await appDataSource.runMigrations();
     console.log("Migrations applied");
 
-    const PORT = process.env.PORT || 3000;
-    server.listen(PORT, () => {
+    server.listen(PORT || 3000, () => {
       console.log(`Server listening on port: ${PORT}`);
     });
   })

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("dotenv/config");
+const envs_1 = require("./config/envs");
 const express_1 = __importDefault(require("express"));
 const indexRouter_1 = __importDefault(require("./routes/indexRouter"));
 const morgan_1 = __importDefault(require("morgan"));
@@ -18,7 +18,7 @@ server.get("/test-email", async (req, res) => {
     console.log("✅ /test-email route hit");
     const msg = {
         to: "orlandozarraga31@hotmail.com", // tu correo de prueba
-        from: process.env.EMAIL_USER,
+        from: envs_1.EMAIL_USER,
         subject: "Prueba de correo desde Render",
         text: "Correo de prueba desde Render usando SendGrid",
         html: "<p>Correo de prueba <strong>desde Render</strong></p>",

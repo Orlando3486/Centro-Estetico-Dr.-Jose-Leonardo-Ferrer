@@ -26,3 +26,6 @@ export const DB_LOGGING: boolean = process.env.DB_LOGGING
 export const EMAIL_USER: string | undefined = process.env.EMAIL_USER;
 
 export const EMAIL_PASS: string | undefined = process.env.EMAIL_PASS;
+
+export const SENDGRID_API_KEY: string | undefined =
+  process.env.SENDGRID_API_KEY;

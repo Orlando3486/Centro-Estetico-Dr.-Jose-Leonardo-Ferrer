@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { Application } from "express";
 declare const server: Application;
 export default server;
