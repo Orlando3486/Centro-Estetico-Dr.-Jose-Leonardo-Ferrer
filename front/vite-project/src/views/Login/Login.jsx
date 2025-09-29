@@ -3,15 +3,17 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import styles from "../../styles/Login.module.css";
 import { loginValidate } from "../../helpers/loginValidate";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useState, Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setLoading(true);
     try {
       const response = await axios.post(`${API_URL}/users/login`, values, {
         headers: { token: "proyectoM3" },
@@ -60,11 +62,13 @@ const Login = () => {
       }
     } finally {
       setSubmitting(false);
+      setLoading(false);
     }
   };
 
   return (
     <div className={styles.contenedor_formulario}>
+      {loading && <div className={styles.loader}></div>}
       <Formik
         initialValues={{ username: "", password: "" }}
         validate={loginValidate}
