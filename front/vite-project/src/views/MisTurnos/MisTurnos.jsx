@@ -8,25 +8,33 @@ const API_URL = import.meta.env.VITE_API_URL;
 const MisTurnos = () => {
   const [citas, setCitas] = useState([]);
   const userId = localStorage.getItem("userId");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!userId) {
       setCitas([]);
       return;
     }
-    axios
-      .get(`${API_URL}/appointments/user/${userId}`, {
-        headers: { token: "proyectoM3" },
-      })
-      .then((response) => {
+    const fetchCitas = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `${API_URL}/appointments/user/${userId}`,
+          {
+            headers: { token: "proyectoM3" },
+          }
+        );
         setCitas(response.data.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(
           "Error en la request:",
           error.response?.data || error.message
         );
-      });
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCitas();
   }, [userId]);
 
   const actualizarEstado = (id, nuevoEstado) => {
@@ -40,6 +48,7 @@ const MisTurnos = () => {
     <>
       <h2 className={styles.tituloH2}>Mis Turnos:</h2>
       <h3 className={styles.tituloH3}>Listado de turnos:</h3>
+      {loading && <p>Cargando...</p>}
       <div>
         {citas.length > 0 ? (
           citas.map((turno) => (
