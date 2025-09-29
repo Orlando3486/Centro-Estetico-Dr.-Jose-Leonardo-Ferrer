@@ -6,37 +6,50 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const Turno = ({ id, date, time, status, onUpdate }) => {
   const cancelarTurno = async () => {
-    try {
-      await axios.put(
-        `${API_URL}/appointments/cancel/${id}`,
-        { status: "cancelled" },
-        {
-          headers: {
-            token: "proyectoM3",
-          },
-        }
-      );
+    // Paso 1: mostrar confirmación
+    const result = await Swal.fire({
+      title: "¿Cancelar turno?",
+      text: "Esta acción no se puede deshacer",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, cancelar",
+      cancelButtonText: "No, mantener",
+      reverseButtons: true,
+    });
 
-      onUpdate(id, "cancelled");
+    if (result.isConfirmed) {
+      try {
+        await axios.put(
+          `${API_URL}/appointments/cancel/${id}`,
+          { status: "cancelled" },
+          {
+            headers: {
+              token: "proyectoM3",
+            },
+          }
+        );
 
-      Swal.fire({
-        title: "¡Turno cancelado!",
-        text: "Tu turno fue cancelado con éxito.",
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });
-    } catch (error) {
-      console.error(
-        "Error al cancelar turno:",
-        error.response?.data || error.message
-      );
+        onUpdate(id, "cancelled");
 
-      Swal.fire({
-        title: "Error",
-        text: "No se pudo cancelar el turno. Intenta nuevamente.",
-        icon: "error",
-        confirmButtonText: "Cerrar",
-      });
+        Swal.fire({
+          title: "¡Turno cancelado!",
+          text: "Tu turno fue cancelado con éxito.",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        });
+      } catch (error) {
+        console.error(
+          "Error al cancelar turno:",
+          error.response?.data || error.message
+        );
+
+        Swal.fire({
+          title: "Error",
+          text: "No se pudo cancelar el turno. Intenta nuevamente.",
+          icon: "error",
+          confirmButtonText: "Cerrar",
+        });
+      }
     }
   };
 
