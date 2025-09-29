@@ -8,12 +8,10 @@ require("dotenv/config");
 const server_1 = __importDefault(require("./server"));
 require("reflect-metadata");
 const data_source_1 = require("./config/data-source");
-// Esto carga variables de .env automáticamente
 data_source_1.appDataSource
     .initialize()
     .then(async () => {
     console.log("DB connected");
-    // Ejecutar migraciones automáticamente
     await data_source_1.appDataSource.runMigrations();
     console.log("Migrations applied");
     server_1.default.listen(envs_1.PORT || 3000, () => {

@@ -1,5 +1,6 @@
 import "dotenv/config";
 export declare const PORT: number;
+export declare const DATABASE_URL: string | undefined;
 export declare const DB_HOST: string | undefined;
 export declare const DB_PORT: number;
 export declare const DB_USERNAME: string | undefined;

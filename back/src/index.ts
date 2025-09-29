@@ -3,14 +3,12 @@ import "dotenv/config";
 import server from "./server";
 import "reflect-metadata";
 import { appDataSource } from "./config/data-source";
-// Esto carga variables de .env automáticamente
 
 appDataSource
   .initialize()
   .then(async () => {
     console.log("DB connected");
 
-    // Ejecutar migraciones automáticamente
     await appDataSource.runMigrations();
     console.log("Migrations applied");
 

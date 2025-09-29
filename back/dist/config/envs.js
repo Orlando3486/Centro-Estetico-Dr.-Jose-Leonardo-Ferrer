@@ -1,10 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SENDGRID_API_KEY = exports.EMAIL_PASS = exports.EMAIL_USER = exports.DB_LOGGING = exports.DB_DROP = exports.DB_SYNCHRONIZE = exports.DB_DATABASE = exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_PORT = exports.DB_HOST = exports.PORT = void 0;
+exports.SENDGRID_API_KEY = exports.EMAIL_PASS = exports.EMAIL_USER = exports.DB_LOGGING = exports.DB_DROP = exports.DB_SYNCHRONIZE = exports.DB_DATABASE = exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_PORT = exports.DB_HOST = exports.DATABASE_URL = exports.PORT = void 0;
 require("dotenv/config");
 exports.PORT = process.env.PORT
     ? parseInt(process.env.PORT, 10)
     : 3000;
+exports.DATABASE_URL = process.env.DATABASE_URL
+    ? process.env.DATABASE_URL
+    : "postgresql://orlando:KAWg0SZrMFJVKyNc1rC0u4qzPp1ES02b@dpg-d3bghgruibrs73femd20-a/consultorioesteticojl";
 exports.DB_HOST = process.env.DB_HOST
     ? process.env.DB_HOST
     : "localhost";
