@@ -1,13 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useState } from "react";
 import axios from "axios";
 import styles from "../../styles/RegisterForm.module.css";
 import Swal from "sweetalert2";
 import { formValidate } from "../../helpers/formValidate";
 import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const RegisterForm = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
@@ -19,6 +20,7 @@ const RegisterForm = () => {
   });
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    setLoading(true);
     setForm(values);
     axios
       .post(`${API_URL}/users/register`, values, {
@@ -51,10 +53,12 @@ const RegisterForm = () => {
         }
       })
       .finally(() => setSubmitting(false));
+    setLoading(false);
   };
 
   return (
     <div className={styles.contenedor_formulario}>
+      {loading && <div className={styles.loader}></div>}
       <Formik
         initialValues={form}
         validate={formValidate}
