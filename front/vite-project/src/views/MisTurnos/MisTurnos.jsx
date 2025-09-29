@@ -48,7 +48,7 @@ const MisTurnos = () => {
     <>
       <h2 className={styles.tituloH2}>Mis Turnos:</h2>
       <h3 className={styles.tituloH3}>Listado de turnos:</h3>
-      {loading && <p>Cargando...</p>}
+      {loading && <div className={styles.loader}></div>}
       <div>
         {citas.length > 0 ? (
           citas.map((turno) => (
