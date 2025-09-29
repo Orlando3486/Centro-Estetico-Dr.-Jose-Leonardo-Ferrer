@@ -58,7 +58,9 @@ const RegisterForm = () => {
 
   return (
     <div className={styles.contenedor_formulario}>
-      {loading && <div className={styles.loader}></div>}
+      <div className={styles.contenedorLoader}>
+        {loading && <div className={styles.loader}></div>}
+      </div>
       <Formik
         initialValues={form}
         validate={formValidate}

@@ -85,6 +85,12 @@
   text-decoration: underline;
 }
 
+.contenedorLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .loader {
   color: #bfa43a;
   border: 4px solid #f3f3f3;
