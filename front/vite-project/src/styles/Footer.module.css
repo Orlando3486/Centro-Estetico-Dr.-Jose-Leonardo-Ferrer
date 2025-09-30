@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   padding: 0.5rem;
@@ -9,7 +9,6 @@
   background-color: #ececec;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.142);
   font-size: 0.9rem;
-  gap: 4rem;
 }
 .centroEstetico {
   color: #bfa43a;
