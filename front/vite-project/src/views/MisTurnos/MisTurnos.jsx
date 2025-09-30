@@ -67,7 +67,7 @@ const MisTurnos = () => {
           <p>No hay turnos disponibles</p>
         )}
       </div>
-      <p>
+      <p className={styles.parrafo}>
         ¿Deseas agendar un nuevo turno?{" "}
         <Link to="/agendar" className={styles.link}>
           Agendar
