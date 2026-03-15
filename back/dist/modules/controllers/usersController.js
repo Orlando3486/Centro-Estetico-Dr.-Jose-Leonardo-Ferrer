@@ -4,7 +4,7 @@ exports.loginUsersController = exports.registerUserController = exports.getUserB
 const usersService_1 = require("../services/usersService");
 const emailService_1 = require("../services/emailService");
 const CredentialService_1 = require("../services/CredentialService");
-const data_source_1 = require("../config/data-source");
+const data_source_1 = require("../../config/data-source");
 const getUsersController = async (req, res) => {
     try {
         const users = await (0, usersService_1.getUsersService)();

@@ -5,7 +5,7 @@ import {
   scheduleAppointmentController,
   cancelAppointmentController,
   getAppointmentsByUserController,
-} from "../controllers/appointmentsControllers";
+} from "../modules/controllers/appointmentsControllers";
 import auth from "../middlewares/autenticacion";
 
 const appointmentsRouter: Router = Router();

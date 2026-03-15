@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userLoginDTO, userRegisterDTO } from "../dto/UserDto";
+import { userLoginDTO, userRegisterDTO } from "../../dto/UserDto";
 export declare const getUsersController: (req: Request, res: Response) => Promise<void>;
 export declare const getUserByIdController: (req: Request<{
     id: string;

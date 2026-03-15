@@ -6,10 +6,10 @@ import {
   // deleteUserService,
 } from "../services/usersService";
 import { sendEmail } from "../services/emailService";
-import { userLoginDTO, userRegisterDTO } from "../dto/UserDto";
-import { PostgresError } from "../interfaces/Errorinterface";
+import { userLoginDTO, userRegisterDTO } from "../../dto/UserDto";
+import { PostgresError } from "../../interfaces/Errorinterface";
 import { loginUser } from "../services/CredentialService";
-import { UserModel } from "../config/data-source";
+import { UserModel } from "../../config/data-source";
 
 export const getUsersController = async (
   req: Request,

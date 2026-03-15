@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.registerUserService = exports.getUserByIdService = exports.getUsersService = void 0;
-const data_source_1 = require("../config/data-source");
-const User_entity_1 = require("../entities/User.entity");
+const data_source_1 = require("../../config/data-source");
+const User_entity_1 = require("../../entities/User.entity");
 const CredentialService_1 = require("./CredentialService");
-const data_source_2 = require("../config/data-source");
+const data_source_2 = require("../../config/data-source");
 const getUsersService = async () => {
     const usuariosFound = await data_source_2.UserModel.find();
     if (usuariosFound.length > 0)

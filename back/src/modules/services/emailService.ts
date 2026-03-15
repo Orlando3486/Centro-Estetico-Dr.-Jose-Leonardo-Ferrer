@@ -1,5 +1,5 @@
 import sgMail, { MailDataRequired } from "@sendgrid/mail";
-import { EMAIL_USER, SENDGRID_API_KEY } from "../config/envs";
+import { EMAIL_USER, SENDGRID_API_KEY } from "../../config/envs";
 
 sgMail.setApiKey(SENDGRID_API_KEY as string);
 

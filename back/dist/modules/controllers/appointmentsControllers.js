@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAppointmentsByUserController = exports.cancelAppointmentController = exports.scheduleAppointmentController = exports.getAppointmentsByIdController = exports.getAppointmentsController = void 0;
 const AppointmentService_1 = require("../services/AppointmentService");
-const data_source_1 = require("../config/data-source");
-const Appointment_entity_1 = require("../entities/Appointment.entity");
+const data_source_1 = require("../../config/data-source");
+const Appointment_entity_1 = require("../../entities/Appointment.entity");
 const emailService_1 = require("../services/emailService");
-const User_entity_1 = require("../entities/User.entity");
+const User_entity_1 = require("../../entities/User.entity");
 const getAppointmentsController = async (req, res) => {
     try {
         res.status(200).json({

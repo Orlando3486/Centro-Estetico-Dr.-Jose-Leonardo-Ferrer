@@ -1,9 +1,9 @@
-import { appDataSource } from "../config/data-source";
-import { userRegisterDTO } from "../dto/UserDto";
-import { Credential } from "../entities/Credentials.entity";
-import { User } from "../entities/User.entity";
+import { appDataSource } from "../../config/data-source";
+import { userRegisterDTO } from "../../dto/UserDto";
+import { Credential } from "../../entities/Credentials.entity";
+import { User } from "../../entities/User.entity";
 import { createCredential } from "./CredentialService";
-import { UserModel } from "../config/data-source";
+import { UserModel } from "../../config/data-source";
 
 export const getUsersService = async (): Promise<User[]> => {
   const usuariosFound = await UserModel.find();

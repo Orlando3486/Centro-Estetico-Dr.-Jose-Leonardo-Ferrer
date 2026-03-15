@@ -1,7 +1,7 @@
-import { scheduleAppointmentDTO } from "../dto/AppointmentDTO";
-import { Appointment } from "../entities/Appointment.entity";
-import { Status } from "../interfaces/IAppointments";
-import { AppointmentModel } from "../repositories/Appointment.repository";
+import { scheduleAppointmentDTO } from "../../dto/AppointmentDTO";
+import { Appointment } from "../../entities/Appointment.entity";
+import { Status } from "../../interfaces/IAppointments";
+import { AppointmentModel } from "../../repositories/Appointment.repository";
 import { getUserByIdService } from "./usersService";
 
 export const getAppService = async (): Promise<Appointment[] | undefined> => {

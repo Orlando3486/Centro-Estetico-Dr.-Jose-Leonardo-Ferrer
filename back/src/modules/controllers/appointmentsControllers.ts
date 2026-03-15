@@ -5,11 +5,11 @@ import {
   getAppByIdService,
   getAppService,
 } from "../services/AppointmentService";
-import { PostgresError } from "../interfaces/Errorinterface";
-import { appDataSource } from "../config/data-source";
-import { Appointment } from "../entities/Appointment.entity";
+import { PostgresError } from "../../interfaces/Errorinterface";
+import { appDataSource } from "../../config/data-source";
+import { Appointment } from "../../entities/Appointment.entity";
 import { sendEmail } from "../services/emailService";
-import { User } from "../entities/User.entity";
+import { User } from "../../entities/User.entity";
 
 export const getAppointmentsController = async (
   req: Request,

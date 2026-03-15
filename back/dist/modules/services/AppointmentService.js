@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cancelAppointmentService = exports.appointmentUserService = exports.getAppByIdService = exports.getAppService = void 0;
-const IAppointments_1 = require("../interfaces/IAppointments");
-const Appointment_repository_1 = require("../repositories/Appointment.repository");
+const IAppointments_1 = require("../../interfaces/IAppointments");
+const Appointment_repository_1 = require("../../repositories/Appointment.repository");
 const usersService_1 = require("./usersService");
 const getAppService = async () => {
     const appoinmentsFound = await Appointment_repository_1.AppointmentModel.find();

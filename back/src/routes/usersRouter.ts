@@ -6,7 +6,7 @@ import {
   getUsersController,
   loginUsersController,
   getUserByIdController,
-} from "../controllers/usersController";
+} from "../modules/controllers/usersController";
 import auth from "../middlewares/autenticacion";
 import { userRegisterDTO } from "../dto/UserDto";
 
