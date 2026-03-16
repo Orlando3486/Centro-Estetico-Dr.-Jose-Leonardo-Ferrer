@@ -14,7 +14,7 @@ if (!databaseUrl) {
 exports.appDataSource = new typeorm_1.DataSource({
     type: "postgres",
     url: databaseUrl,
-    ssl: isProd ? { rejectUnauthorized: false } : false,
+    ssl: { rejectUnauthorized: false },
     synchronize: !isProd,
     logging: !isProd,
     entities: [User_entity_1.User, Credentials_entity_1.Credential, Appointment_entity_1.Appointment],

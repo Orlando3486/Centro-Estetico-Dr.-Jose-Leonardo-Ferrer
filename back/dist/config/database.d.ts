@@ -1,4 +1,4 @@
-import { Pool } from "pg";
-declare const pool: Pool;
-export default pool;
+import "dotenv/config";
+import pkg from "pg";
+export declare const pool: pkg.Pool;
 //# sourceMappingURL=database.d.ts.map

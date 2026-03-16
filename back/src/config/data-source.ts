@@ -14,7 +14,7 @@ if (!databaseUrl) {
 export const appDataSource = new DataSource({
   type: "postgres",
   url: databaseUrl,
-  ssl: isProd ? { rejectUnauthorized: false } : false,
+  ssl: { rejectUnauthorized: false },
   synchronize: !isProd,
   logging: !isProd,
   entities: [User, Credential, Appointment],
