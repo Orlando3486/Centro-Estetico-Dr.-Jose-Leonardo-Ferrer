@@ -8,7 +8,7 @@ const Footer = () => {
       <p> Palermo - San Fernando - Mar del Plata </p>
 
       <div className={styles.imagenes}>
-        <p>Contactanos:</p>
+        <p className={styles.contactanos}>Contactanos:</p>
         <a
           href="https://www.instagram.com/#"
           target="_blank"

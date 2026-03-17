@@ -3,7 +3,7 @@ import styles from "../styles/Botones.module.css";
 
 function Botones() {
   return (
-    <div>
+    <div className={styles.botones}>
       <Link to="/register">
         <button className={styles.boton_home}>Registrarme</button>
       </Link>
