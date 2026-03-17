@@ -21,7 +21,8 @@ export const NavBarInicio = () => {
       <Logo />
 
       <h1 className={styles.nombre_estetica}>
-        Centro Estetico Dr. Jose Leonardo Ferrer
+        Centro Estetico <br className={styles.mobile_break} /> Dr. Jose Leonardo
+        Ferrer
       </h1>
 
       {/* BOTON HAMBURGUESA */}
