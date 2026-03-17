@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 .contenedor_formulario {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 130vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .formulario {
@@ -10,28 +16,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 3rem;
-  width: 50%;
-  height: 80%;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 500px;
   background-color: #ececec;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(95, 94, 94, 0.3);
+  margin-bottom: 1rem;
 }
 
 .inputs_formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-radius: 0.2rem;
-  margin: 1rem;
+  margin: 0.8rem;
   padding: 0.4rem;
-  width: 70%;
+  width: 100%;
   background-color: #f5f5f5;
   border: none;
   outline: none;
   box-shadow: 0 4px 6px rgba(95, 94, 94, 0.3);
   transition: 0.5s;
 }
+
 .inputs_formulario:hover {
   box-shadow: 0 2px 4px #bfa43a;
 }
@@ -39,7 +48,7 @@
 .boton_formulario {
   margin: 1rem 1rem;
   padding: 0.5rem;
-  width: 73%;
+  width: 90%;
   background-color: #1565c0;
   color: aliceblue;
   border: none;
@@ -51,13 +60,14 @@
 .boton_formulario:hover {
   background-color: #0d47a1;
 }
+
 .inputError {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0.1rem;
-  width: 100%;
+  width: 90%;
 }
 
 .tituloH2 {
@@ -103,5 +113,42 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .tituloH2 {
+    font-size: 1.1rem;
+  }
+
+  .formulario {
+    width: 100%;
+    height: auto;
+    margin: 1rem 2rem;
+  }
+
+  .inputs_formulario {
+    width: 100%;
+  }
+
+  .boton_formulario {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  .formulario p {
+    font-size: 0.8rem;
+  }
+
+  label {
+    font-size: 0.8Srem;
+  }
+
+  .link {
+    font-size: 0.9rem;
   }
 }

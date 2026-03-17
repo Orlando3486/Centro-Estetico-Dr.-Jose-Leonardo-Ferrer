@@ -2,3 +2,9 @@
   width: 6rem;
   border-radius: 1rem;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    width: 4rem;
+  }
+}
