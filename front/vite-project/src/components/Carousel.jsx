@@ -17,7 +17,7 @@ const images = [
     text: "Descubrí nuestros servicios",
     link: "/register",
   },
-  { src: "/estetica5.jpg", text: "Reservá tu turno 📅", link: "/login" },
+  { src: "/estetica5.jpg", text: "Reservá tu turno", link: "/login" },
 ];
 
 const Carousel = () => {
@@ -31,7 +31,7 @@ const Carousel = () => {
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % images.length);
         setFade(true);
-      }, 500);
+      }, 1000);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -39,6 +39,10 @@ const Carousel = () => {
 
   return (
     <div className={styles.carousel}>
+      {/* <a href="https://wa.me/549XXXXXXXX" className={styles.botonWhatsapp}>
+        Reservar turno
+      </a>; */}
+
       <Link to={images[index].link}>
         <img
           src={images[index].src}
