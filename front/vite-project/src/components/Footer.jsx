@@ -5,7 +5,10 @@ const Footer = () => {
       <p className={styles.centroEstetico}>
         Centro Estetico Dr. Jose Leonardo Ferrer
       </p>
-      <p> Palermo - San Fernando - Mar del Plata </p>
+      <p className={styles.texto_eliminado}>
+        {" "}
+        Palermo - San Fernando - Mar del Plata{" "}
+      </p>
 
       <div className={styles.imagenes}>
         <p className={styles.contactanos}>Contactanos:</p>
