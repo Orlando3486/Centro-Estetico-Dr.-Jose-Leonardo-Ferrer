@@ -55,8 +55,10 @@ footer .contactanos {
 
   .footer p {
     margin: 0;
+    margin-bottom: 0.3rem;
     padding: 0.2rem 0;
     font-size: 0.6rem;
+    line-height: 0.8;
   }
 
   .imagenes {
@@ -64,6 +66,10 @@ footer .contactanos {
   }
 
   .centroEstetico {
+    display: none;
+  }
+
+  .texto_eliminado {
     display: none;
   }
 }
