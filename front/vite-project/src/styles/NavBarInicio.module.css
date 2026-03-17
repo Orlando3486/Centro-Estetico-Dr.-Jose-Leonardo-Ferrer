@@ -1,8 +1,8 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: space-around;
+  /* padding: 0.5rem; */
   background-color: #e2e2e2;
   box-shadow: 0 2px 4px rgba(95, 94, 94, 0.3);
   border-radius: 0.5rem;
@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+.mobile_break {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nombre_estetica {
     font-size: 1.1rem;
@@ -69,9 +73,8 @@
   }
 
   .link {
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 
   .hamburguesa {
@@ -81,7 +84,7 @@
 
   .contenedor {
     position: absolute;
-    top: 100px;
+    top: 68px;
     right: 0;
     width: 30%;
     background: #e2e2e2;
@@ -104,13 +107,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #bfa43a;
-    text-decoration: underline;
+    color: #414141;
+    text-decoration: none;
   }
 
   .activo {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .mobile_break {
+    display: block;
   }
 }

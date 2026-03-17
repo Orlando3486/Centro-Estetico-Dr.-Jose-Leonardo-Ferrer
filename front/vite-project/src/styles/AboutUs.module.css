@@ -74,7 +74,7 @@ h2 {
 }
 
 .valores {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -88,6 +88,7 @@ h2 {
 }
 
 .card h3 {
+  font-size: 1.1rem;
   font-weight: bold;
   color: #bfa43a;
 }
