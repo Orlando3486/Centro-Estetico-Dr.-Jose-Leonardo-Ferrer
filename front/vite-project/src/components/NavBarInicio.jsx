@@ -40,19 +40,16 @@ export const NavBarInicio = () => {
             </Link>
             {/* )} */}
           </li>
-
-          <li>
-            <Link to="/register" className={styles.link} onClick={toggleMenu}>
-              Registro
-            </Link>
-          </li>
-
           <li>
             <Link to="/login" className={styles.link} onClick={toggleMenu}>
               Acceso
             </Link>
           </li>
-
+          <li>
+            <Link to="/register" className={styles.link} onClick={toggleMenu}>
+              Registro
+            </Link>
+          </li>
           <li>
             <Link to="/aboutus" className={styles.link} onClick={toggleMenu}>
               Sobre Nosotros
