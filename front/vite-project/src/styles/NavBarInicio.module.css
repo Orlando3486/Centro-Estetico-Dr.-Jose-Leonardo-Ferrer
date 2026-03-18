@@ -11,7 +11,6 @@
 
 .nombre_estetica {
   font-size: 1.5rem;
-  font-weight: bold;
   color: #bfa43a;
   text-align: center;
   text-decoration: underline;
@@ -28,7 +27,6 @@
   flex-wrap: wrap;
   color: #414141;
   font-size: 1rem;
-  font-weight: bold;
   transition: 0.5s;
   text-decoration: none;
 }
@@ -74,7 +72,6 @@
 
   .link {
     font-size: 0.9rem;
-    font-weight: 700;
   }
 
   .hamburguesa {
