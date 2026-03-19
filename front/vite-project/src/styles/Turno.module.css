@@ -1,31 +1,39 @@
 .turno {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 280px;
+  padding: 1rem;
   background-color: #ececec;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  margin: 1rem;
-  margin-top: 2rem;
-  font-weight: 800;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
-  transition: 0.5s;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(95, 94, 94, 0.3);
 }
+
 .turno:hover {
-  box-shadow: 0 1px 3px #bfa43a;
+  box-shadow: 0 3px 5px #bfa43a;
+}
+
+.turno h4 {
+  font-weight: 500;
+  margin: 0.2rem 0;
 }
 
 .boton {
-  padding: 0.5rem 1rem;
-  background-color: #1565c0;
-  color: aliceblue;
+  margin-top: 0.5rem;
+  padding: 0.4rem;
   border: none;
-  border-radius: 0.3rem;
-  font-weight: 800;
+  border-radius: 6px;
+  background: #c62828;
+  color: white;
   cursor: pointer;
 }
 
 .boton:hover {
-  background-color: #0d47a1;
+  background: #b71c1c;
 }
+
+/* @media (max-width: 768px) {
+  .turnos h4 {
+    font-size: 0.8rem;
+  }
+} */

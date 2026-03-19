@@ -55,12 +55,12 @@ const Turno = ({ id, date, time, status, onUpdate }) => {
 
   return (
     <div className={styles.turno}>
-      <h4>Id: {id}</h4>
-      <h4>Fecha: {date}</h4>
-      <h4>Hora: {time}</h4>
-      <h4>
+      <p>Id: {id}</p>
+      <p>Fecha: {date}</p>
+      <p>Hora: {time}</p>
+      <p>
         Status: <span style={statusStyle(status)}>{status}</span>
-      </h4>
+      </p>
 
       {status !== "cancelled" && (
         <button

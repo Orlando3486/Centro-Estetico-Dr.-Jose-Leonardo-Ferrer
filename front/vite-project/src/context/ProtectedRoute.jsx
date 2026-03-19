@@ -3,7 +3,9 @@ import { useAuth } from "../hooks/useAuth";
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
-  return user ? children : <Navigate to="/login" replace />;
+  const userId = localStorage.getItem("userId");
+
+  return user || userId ? children : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;
