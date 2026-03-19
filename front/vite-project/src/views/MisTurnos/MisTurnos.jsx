@@ -32,6 +32,7 @@ const MisTurnos = () => {
         );
       } finally {
         setLoading(false);
+        setLoading(false);
       }
     };
     fetchCitas();
@@ -45,14 +46,14 @@ const MisTurnos = () => {
     );
   };
   return (
-    <>
+    <section className={styles.seccionPrincipal}>
       <h2 className={styles.tituloH2}>Mis Turnos:</h2>
       <h3 className={styles.tituloH3}>Listado de turnos:</h3>
       <div className={styles.contenedorLoader}>
         {loading && <div className={styles.loader}></div>}
       </div>
-      <div>
-        {citas.length > 0 ? (
+      <div className={styles.citasAgendadas}>
+        {citas?.length > 0 ? (
           citas.map((turno) => (
             <Turno
               key={turno.id}
@@ -73,7 +74,7 @@ const MisTurnos = () => {
           Agendar
         </Link>
       </p>
-    </>
+    </section>
   );
 };
 export default MisTurnos;

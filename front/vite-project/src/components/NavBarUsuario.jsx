@@ -1,14 +1,25 @@
+import Logo from "./Logo";
 import styles from "../styles/NavBarUsuario.module.css";
-import Logo from "./Logo.jsx";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth.js";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 
 export const NavBarUsuario = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const { logout } = useAuth();
   const navigate = useNavigate();
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuAbierto(!menuAbierto);
+  };
+
+  // const hideInicio = location.pathname === "/home" || location.pathname === "/";
+  // const hideAvatar = location.pathname === "/login";
+  // const hideRegister = location.pathname === "/register";
+  // const hideAboutUs = location.pathname === "/aboutus";
 
   const handleLogout = () => {
     logout();
@@ -16,48 +27,47 @@ export const NavBarUsuario = () => {
     navigate("/");
   };
 
-  const hidePerfil = location.pathname === "/perfil";
-  const hideAgendar = location.pathname === "/agendar";
-  const hideTurnos = location.pathname === "/turnos";
-
   return (
-    <header className={styles.contenedorPrincipal}>
-      <div className={styles.contenedor}>
-        <Logo />
-        <h1 className={styles.nombre_estetica}>
-          Centro Estetico Dr. Jose Leonardo Ferrer
-        </h1>
-        <nav>
-          <ul className={styles.lista}>
-            <li>
-              {!hidePerfil && (
-                <Link to="/perfil" className={styles.link}>
-                  Mi Perfil
-                </Link>
-              )}
-            </li>
-            <li>
-              {!hideAgendar && (
-                <Link to="/agendar" className={styles.link}>
-                  Agendar
-                </Link>
-              )}
-            </li>
-            <li>
-              {!hideTurnos && (
-                <Link to="/turnos" className={styles.link}>
-                  Mis Turnos
-                </Link>
-              )}
-            </li>
-            <li>
-              <button onClick={handleLogout} className={styles.boton}>
-                Cerrar sesión
-              </button>
-            </li>
-          </ul>
-        </nav>
+    <header className={styles.header}>
+      <Logo />
+
+      <h1 className={styles.nombre_estetica}>
+        Centro Estetico <br className={styles.mobile_break} /> Dr. Jose Leonardo
+        Ferrer
+      </h1>
+
+      {/* BOTON HAMBURGUESA */}
+      <div className={styles.hamburguesa} onClick={toggleMenu}>
+        ☰
       </div>
+
+      <nav
+        className={`${styles.contenedor} ${menuAbierto ? styles.activo : ""}`}>
+        <ul className={styles.lista}>
+          <li>
+            {/* {!hideInicio && ( */}
+            <Link to="/perfil" className={styles.link}>
+              Mi Perfil
+            </Link>
+            {/* )} */}
+          </li>
+          <li>
+            <Link to="/agendar" className={styles.link}>
+              Agendar
+            </Link>
+          </li>
+          <li>
+            <Link to="/turnos" className={styles.link}>
+              Mis Turnos
+            </Link>
+          </li>
+          <li>
+            <button onClick={handleLogout} className={styles.boton}>
+              Cerrar sesión
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
