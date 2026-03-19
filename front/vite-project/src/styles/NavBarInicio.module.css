@@ -60,6 +60,20 @@
   display: none;
 }
 
+.boton {
+  padding: 0.4rem 0.8rem;
+  background-color: #1565c0;
+  color: aliceblue;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #0d47a1;
+}
+
 @media (max-width: 768px) {
   .nombre_estetica {
     font-size: 1.1rem;
@@ -116,5 +130,9 @@
 
   .mobile_break {
     display: block;
+  }
+
+  .boton {
+    padding: 0.1rem 0.3rem;
   }
 }
