@@ -46,18 +46,18 @@ export const NavBarUsuario = () => {
         <ul className={styles.lista}>
           <li>
             {/* {!hideInicio && ( */}
-            <Link to="/perfil" className={styles.link}>
+            <Link to="/perfil" className={styles.link} onClick={toggleMenu}>
               Mi Perfil
             </Link>
             {/* )} */}
           </li>
           <li>
-            <Link to="/agendar" className={styles.link}>
+            <Link to="/agendar" className={styles.link} onClick={toggleMenu}>
               Agendar
             </Link>
           </li>
           <li>
-            <Link to="/turnos" className={styles.link}>
+            <Link to="/turnos" className={styles.link} onClick={toggleMenu}>
               Mis Turnos
             </Link>
           </li>

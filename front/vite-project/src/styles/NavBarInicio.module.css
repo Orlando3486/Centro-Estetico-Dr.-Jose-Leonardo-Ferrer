@@ -96,7 +96,7 @@
   .contenedor {
     position: absolute;
     top: 68px;
-    right: 0;
+    right: 1%;
     width: 30%;
     background: #e2e2e2;
     transform: translateY(-20px);

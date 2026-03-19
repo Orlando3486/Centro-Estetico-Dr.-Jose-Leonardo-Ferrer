@@ -31,13 +31,14 @@
 .tituloH2 {
   color: #bfa43a;
   text-decoration: underline;
-  margin: 1rem;
+  margin: 0;
+  margin-top: 1rem;
   font-size: 1.4rem;
 }
 
 .tituloH3 {
   color: #bfa43a;
-  margin-bottom: 1rem;
+  margin: 1rem;
   font-size: 1.1rem;
 }
 
